@@ -1,0 +1,22 @@
+{
+  "name": "vputil",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rakuten Games",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "chalk": "^2.4.2",
+    "commander": "^2.19.0",
+    "walk-sync": "^2.2.0"
+  },
+  "bin": {
+    "vputil": "src/index.js"
+  },
+  "devDependencies": {},
+  "keywords": []
+}
