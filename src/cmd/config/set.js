@@ -1,20 +1,26 @@
-const program = require('commander');
+const program = require('caporal');
 
 const configStore = require('../../storage/config-store');
-const wrapper = require('../../util/wrapper');
+const wrapper = require('../../program/wrapper');
+const view = require('../../util/view');
 
-const action = async(key, program) => {
-    const value = configStore.get(key);
+const action = async (args, options) => {
+  const key = args.key;
+  const value = args.value;
 
-    if (!value) {
-        console.log('not existed')
-    }
+  configStore.set(args.key, args.value);
 
-    return value;
+  view.configSet.render({
+    key,
+    value
+  })
 };
 
 
 program
-    .command('config get [key]')
-    .description('[DESCRIPTION TBD]')
-    .action(wrapper(action));
+  .command('config set')
+  .description('Set key-value to config')
+  .argument('<key>', 'key')
+  .argument('<value>', 'value')
+  .option('--output <output>', 'Output target')
+  .action(wrapper(action));

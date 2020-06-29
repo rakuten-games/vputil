@@ -1,47 +1,15 @@
-# Toaster - Development tools for Cocos Creator games
+# Vputil
 
 ## Installation
 
 ```bash
-# Checkout the git repository:
-git@github.com:rakuten-games/toaster.git
-
-# Install dependencies
-cd toaster
-npm install
-
-# Install toaster package globally:
-npm install -g .
+npm install -g vputil
 ```
 
-If you run into a permission issue, you can try
+## Usage
 
-```bash
-sudo npm install -g .
+To display help
+
+```.bash
+vputil
 ```
-
-See help
-
-```bash
-# On any path
-toaster --help
-```
-
-Build your game
-
-```bash
-cd path/to/game
-toaster build
-```
-
-## Documentation
-
-- [Configuration](./doc/CONFIGURATION.md)
-- [Build](./doc/BUILD.md)
-- [Run](./doc/RUN.md)
-- [Plugin](./doc/PLUGIN.md)
-- [Others](./doc/OTHERS.md)
-- [Improving initial loading time](./doc/LOADING_TIME.md)
-- [Change Log](./doc/CHANGE_LOG.md)
-
-## License

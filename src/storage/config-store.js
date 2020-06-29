@@ -1,13 +1,18 @@
 const fs = require('fs');
-var path = require('path');
+const os = require('os');
+const mkdirp = require('mkdirp');
 
-const dataPath = '~/.config/vputil/config.json';
+const configDir = `${os.homedir()}/.config/vputil`;
+const configName = 'config.json';
+
+const configPath = `${configDir}/${configName}`;
 
 let data = {};
 let isInit = false;
 
 const allowKeys = [
-  ''
+  'token',
+  'output',
 ];
 
 const get = (key, defaultValue) => {
@@ -35,17 +40,26 @@ const set = (key, value) => {
     isInit = true;
   }
 
+  if (allowKeys.indexOf(key) === -1) {
+    throw new Error(`Not a valid config key '${key}'`);
+  }
+
   data[key] = value;
 
   save();
 };
 
 const load = () => {
-  data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+  try {
+    data = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+  } catch (e) {
+    data = {};
+  }
 };
 
 const save = () => {
-  fs.writeFileSync(dataPath, JSON.stringify(data, null, 4));
+  mkdirp.sync(configDir);
+  fs.writeFileSync(configPath, JSON.stringify(data, null, 4));
 };
 
 
