@@ -13,7 +13,7 @@ module.exports = async (
   }) => {
 
   const data = {
-    comment: comment || 'Upload from vputil',
+    comment: comment || 'Upload via vputil',
   };
 
   const response = await superagent
