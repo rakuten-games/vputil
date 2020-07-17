@@ -1,12 +1,19 @@
 const superagent = require('superagent');
 const fs = require('fs');
 
-module.exports = async ({
-                          host, organization, gameId, authorization, bundle, onProgress = () => {
-  }
-                        }) => {
+module.exports = async (
+  {
+    host,
+    organization,
+    gameId,
+    authorization,
+    bundle,
+    comment,
+    onProgress = () => {}
+  }) => {
+
   const data = {
-    comment: 'Upload from vputil',
+    comment: comment || 'Upload via vputil',
   };
 
   const response = await superagent

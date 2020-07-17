@@ -10,6 +10,6 @@ npm install -g vputil
 
 To display help
 
-```.bash
+```bash
 vputil
 ```
