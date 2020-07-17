@@ -30,7 +30,7 @@ const onProgress = ({output}) => {
 
     if (!bar) {
       bar = new cliProgress.SingleBar({
-        format: 'Uploading... [{bar}] {percentage}% | {value}/{total} KB'
+        format: 'Uploading... [{bar}] {percentage}% | {value}/{total}'
       });
       bar.start(total, 0);
     }
