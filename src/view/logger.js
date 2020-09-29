@@ -25,11 +25,15 @@ const debug = ({logger}) => {
 };
 
 const info = ({logger}) => {
-  return logger.info;
+  return (...args) => {
+    logger.info(args.join(''));
+  }
 };
 
 const error = ({logger}) => {
-  return logger.error;
+  return (...args) => {
+    logger.error(args.join(''));
+  }
 };
 
 module.exports = {

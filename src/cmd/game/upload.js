@@ -1,4 +1,4 @@
-const program = require('caporal');
+const { program } = require('@caporal/core');
 
 const wrapper = require('../../program/wrapper');
 const api = require('../../util/api');
@@ -22,8 +22,7 @@ const action = async (args, options) => {
 };
 
 program
-  .command('game upload')
-  .description('Upload game bundle')
+  .command('game upload', 'Upload game bundle')
   .argument('<game_id>', 'Game id')
   .argument('<bundle>', 'Bundle')
   .option('--comment <comment>', 'Comment')
