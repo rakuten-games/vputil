@@ -19,7 +19,8 @@ class Auth {
       console.debug('signature:');
       console.debug(this._signature);
     } catch (err) {
-      throw new Error(`Not a valid token for "${token}". ${err.message}`);
+      console.debug(err);
+      throw new Error(`Not a valid token "${token}". Please update the token`);
     }
   }
 
