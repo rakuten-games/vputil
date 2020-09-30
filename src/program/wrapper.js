@@ -2,7 +2,7 @@ const envStore = require('../storage/env-store');
 const view = require('../util/view');
 
 module.exports = (fn) => {
-  return async (args, options, logger) => {
+  return async ({logger, args, options}) => {
     envStore.setAll(options);
 
     console.debug = view.logger.debug({logger});

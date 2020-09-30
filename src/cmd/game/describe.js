@@ -1,4 +1,4 @@
-const program = require('caporal');
+const { program } = require('@caporal/core');
 
 const wrapper = require('../../program/wrapper');
 const api = require('../../util/api');
@@ -15,8 +15,7 @@ const action = async (args, options) => {
 };
 
 program
-  .command('game describe')
-  .description('Print game info')
+  .command('game describe', 'Print game info')
   .argument('<game_id>', 'Game id')
   .option('--token <token>', 'Access token')
   .option('--output <output>', 'Output target')

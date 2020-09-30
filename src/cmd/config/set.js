@@ -1,4 +1,4 @@
-const program = require('caporal');
+const { program } = require('@caporal/core');
 
 const configStore = require('../../storage/config-store');
 const wrapper = require('../../program/wrapper');
@@ -18,8 +18,7 @@ const action = async (args, options) => {
 
 
 program
-  .command('config set')
-  .description('Set key-value to config')
+  .command('config set', 'Set key-value to config')
   .argument('<key>', 'key')
   .argument('<value>', 'value')
   .option('--output <output>', 'Output target')
