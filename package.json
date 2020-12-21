@@ -1,6 +1,6 @@
 {
   "name": "vputil",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A deploy util for viber play",
   "main": "src/index.js",
   "scripts": {
