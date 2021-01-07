@@ -1,6 +1,8 @@
 name: "Lgputil Testing Suites"
+
 on:
   workflow_dispatch:
+
 jobs:
   bats-run:
     runs-on: ubuntu-latest
@@ -21,8 +23,8 @@ jobs:
 
       - name: Set env variables
         run: |
-          echo "GAME_ID=b6284467-8255-4085-849f-42459bac716f" >> $GITHUB_ENV
-          echo "ORG=rakuten-games" >> $GITHUB_ENV
+          echo "GAME_ID=l3i6d2ia4uj9d8vop4n1k02eo6bbic05" >> $GITHUB_ENV
+          echo "ORG=viber-play" >> $GITHUB_ENV
 
       - name: Install to global
         run: npm install -g .
