@@ -33,9 +33,6 @@ jobs:
       - name: Set auth
         run: vputil config set token ${{ secrets.VPUTIL_TOKEN }}
 
-      - name: Set org
-        run: vputil config set org $ORG
-
       - name: Test
         run: GAME_ID=$GAME_ID bats ./test/bats
 
