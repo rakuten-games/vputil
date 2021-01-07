@@ -1,5 +1,5 @@
 const nock = require('nock');
-const uploadGame = require('../src/api/upload-game');
+const uploadGame = require('../../src/api/upload-game');
 
 describe("upload-game", function () {
   it("has valid request", async function () {

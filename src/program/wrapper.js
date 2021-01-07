@@ -13,6 +13,7 @@ module.exports = (fn) => {
       await fn(args, options, logger);
     } catch (err) {
       view.error.render({err});
+      process.exitCode = 1;
     }
   }
 };

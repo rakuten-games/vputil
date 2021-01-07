@@ -1,4 +1,4 @@
-const auth = require('../src/util/auth');
+const auth = require('../../src/util/auth');
 
 describe('env-store', function () {
   const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwZXJtaXNzaW9ucyI6W10sIm9yZyI6ImZvbyIsImF1ZCI6ImJhciIsImV4cCI6MTUwMDAwMDAwMH0.zBB0fVFCmw8QFJFG_MmstaZlP3n_PRS8ox0PVJnVoI8';

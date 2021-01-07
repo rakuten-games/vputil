@@ -4,7 +4,7 @@
   "description": "A deploy util for viber play",
   "main": "src/index.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "cd test && jasmine"
   },
   "author": "Rakuten Games",
   "license": "ISC",
