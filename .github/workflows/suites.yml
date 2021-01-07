@@ -1,10 +1,11 @@
-name: "Lgputil Testing Suites"
+name: "Vputil Testing Suites"
 
 on:
   workflow_dispatch:
 
 jobs:
   bats-run:
+
     runs-on: ubuntu-latest
     steps:
 
