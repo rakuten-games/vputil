@@ -1,9 +1,9 @@
 const os = require('os');
 const mock = require('mock-fs');
 
-delete require.cache[require.resolve('../src/storage/env-store')];
+delete require.cache[require.resolve('../../src/storage/config-store')];
 
-const configStore = require('../src/storage/config-store');
+const configStore = require('../../src/storage/config-store');
 
 describe('config-store', function () {
   beforeAll(function () {

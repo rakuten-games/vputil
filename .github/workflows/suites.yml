@@ -1,0 +1,57 @@
+name: "Vputil Testing Suites"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  bats-run:
+
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Setup BATS
+        uses: mig4/setup-bats@v1
+        with:
+          bats-version: 1.2.1
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+
+      - name: Check out code
+        uses: actions/checkout@v1
+
+      - name: Set env variables
+        run: |
+          echo "GAME_ID=l3i6d2ia4uj9d8vop4n1k02eo6bbic05" >> $GITHUB_ENV
+          echo "ORG=viber-play" >> $GITHUB_ENV
+
+      - name: Install to global
+        run: npm install -g .
+
+      - name: Set auth
+        run: vputil config set token ${{ secrets.VPUTIL_TOKEN }}
+
+      - name: Test
+        run: GAME_ID=$GAME_ID bats ./test/bats
+
+      - name: Conditional value- status
+        uses: haya14busa/action-cond@v1
+        id: status
+        if: always()
+        with:
+          cond: ${{ job.status == 'success' }}
+          if_true: 'passed'
+          if_false: 'failed'
+
+      - name: Slack Notify
+        uses: markkong318/slack-notification-github-action@1.0.3
+        if: always()
+        env:
+          WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+          CHANNEL: tests_and_deployments
+          USERNAME: github
+          JOB_STATUS: ${{ job.status }}
+          MESSAGE: 'Vputil suites test ${{ steps.status.outputs.value }}. See details: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+          ICON: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png

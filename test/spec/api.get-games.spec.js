@@ -1,14 +1,13 @@
 const nock = require('nock');
-const getGame = require('../src/api/get-game');
+const getGames = require('../../src/api/get-games');
 
-describe('get-game', function () {
-  it('has valid request', async function () {
+describe("get-games", function () {
+  it("has valid request", async function () {
     const host = 'https://foo';
     const organization = 'bar';
-    const gameId = 'baz';
     const authorization = 'Bearer quz';
 
-    const uri = `/joker/developers/v2/${organization}/game/${gameId}`;
+    const uri = `/joker/developers/v2/${organization}/game?offset=0&count=100`;
 
     const body = {
       foo: 'bar',
@@ -19,10 +18,9 @@ describe('get-game', function () {
       .matchHeader('Authorization', authorization)
       .reply(200, body);
 
-    const result = await getGame({
+    const result = await getGames({
       host,
       organization,
-      gameId,
       authorization,
     });
 

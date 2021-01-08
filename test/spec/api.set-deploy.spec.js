@@ -1,5 +1,5 @@
 const nock = require('nock');
-const setDeploy = require('../src/api/set-deploy');
+const setDeploy = require('../../src/api/set-deploy');
 
 describe("set-deploy", function () {
   it("has valid request", async function () {
