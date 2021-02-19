@@ -18,7 +18,7 @@ const action = async (args, options) => {
     onProgress,
   });
 
-  view.gameUpload.render({result});
+  view.gameUpload.render({ result });
 };
 
 program

@@ -1,7 +1,7 @@
 const chalk = require('chalk');
 
 class CliTable {
-  constructor({header, width = [], style = []}) {
+  constructor({ header, width = [], style = [] }) {
     this.header = header;
     this.width = width;
     this.style = style;

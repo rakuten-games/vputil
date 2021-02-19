@@ -3,7 +3,7 @@ const chalk = require('chalk');
 
 const cliTable = require('./component/cli-table');
 
-const render = ({output, list}) => {
+const render = ({ output, list }) => {
   switch (output) {
     case 'json':
       console.log(JSON.stringify(list));
