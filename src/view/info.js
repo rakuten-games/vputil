@@ -2,7 +2,7 @@ const moment = require('moment');
 
 const cliTable = require('./component/cli-table');
 
-const render = ({output, jwt}) => {
+const render = ({ output, jwt }) => {
   switch (output) {
     case 'json':
       console.log(JSON.stringify({

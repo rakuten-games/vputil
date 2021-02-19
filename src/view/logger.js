@@ -3,7 +3,7 @@ const moment = require('moment');
 const chalk = require('chalk');
 const util = require('util');
 
-const debug = ({logger}) => {
+const debug = ({ logger }) => {
   return (...args) => {
     const timestamp = chalk.gray(`[${moment().format('YYYY-MM-DD HH:mm:ss')}]`);
 
@@ -24,13 +24,13 @@ const debug = ({logger}) => {
   }
 };
 
-const info = ({logger}) => {
+const info = ({ logger }) => {
   return (...args) => {
     logger.info(args.join(''));
   }
 };
 
-const error = ({logger}) => {
+const error = ({ logger }) => {
   return (...args) => {
     logger.error(args.join(''));
   }

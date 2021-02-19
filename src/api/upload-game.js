@@ -9,7 +9,8 @@ module.exports = async (
     authorization,
     bundle,
     comment,
-    onProgress = () => {}
+    onProgress = () => {
+    }
   }) => {
 
   const data = {

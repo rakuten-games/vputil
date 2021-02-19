@@ -11,7 +11,7 @@ const action = async (args, options, logger) => {
     gameId,
   });
 
-  view.gameList.render({list});
+  view.gameList.render({ list });
 };
 
 program

@@ -1,25 +1,26 @@
 {
   "name": "vputil",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "A deploy util for viber play",
   "main": "src/index.js",
   "scripts": {
-    "test": "cd test && jasmine"
+    "test": "cd test && jasmine",
+    "bats": "GAME_ID=`sed -n 's/^.*\"GAME_ID=\\([^\"]*\\).*/\\1/p' ./.github/workflows/suites.yml` ./test/bats/suites.bats"
   },
   "author": "Rakuten Games",
   "license": "ISC",
   "dependencies": {
     "@caporal/core": "^2.0.2",
     "caporal": "^1.4.0",
-    "chalk": "^2.4.2",
-    "cli-progress": "^3.8.2",
-    "jasmine": "^3.5.0",
+    "chalk": "^4.1.0",
+    "cli-progress": "^3.9.0",
+    "jasmine": "^3.6.4",
     "lodash": "^4.17.20",
     "mkdirp": "^1.0.4",
-    "mock-fs": "^4.12.0",
-    "moment": "^2.27.0",
-    "nock": "^13.0.2",
-    "superagent": "^5.3.1",
+    "mock-fs": "^4.13.0",
+    "moment": "^2.29.1",
+    "nock": "^13.0.7",
+    "superagent": "^6.1.0",
     "walk-sync": "^2.2.0",
     "winston": "^3.3.3"
   },
