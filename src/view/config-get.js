@@ -1,4 +1,4 @@
-const render = ({output, key, value}) => {
+const render = ({ output, key, value }) => {
   switch (output) {
     case 'json':
       console.log(JSON.stringify({

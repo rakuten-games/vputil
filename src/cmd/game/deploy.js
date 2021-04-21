@@ -19,7 +19,7 @@ const action = async (args, options) => {
     version,
   });
 
-  view.gameDeploy.render({result});
+  view.gameDeploy.render({ result });
 };
 
 program

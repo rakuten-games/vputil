@@ -1,7 +1,7 @@
 const _ = require('lodash');
 const cliProgress = require('cli-progress');
 
-const render = ({output, result}) => {
+const render = ({ output, result }) => {
   const {
     number,
   } = result;
@@ -15,7 +15,7 @@ const render = ({output, result}) => {
   }
 };
 
-const onProgress = ({output}) => {
+const onProgress = ({ output }) => {
   let bar;
 
   return (event) => {

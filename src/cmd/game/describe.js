@@ -11,7 +11,11 @@ const action = async (args, options) => {
     gameId,
   });
 
-  view.gameDescribe.render({game});
+  const gameDeployment = await api.getGameDeployment({
+    gameId,
+  });
+
+  view.gameDescribe.render({ game, gameDeployment });
 };
 
 program

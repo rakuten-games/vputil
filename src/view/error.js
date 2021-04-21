@@ -2,7 +2,7 @@ const _ = require('lodash');
 const chalk = require('chalk');
 const util = require('util');
 
-const renderError = ({output, err}) => {
+const renderError = ({ output, err }) => {
   switch (output) {
     case 'json':
       console.log(JSON.stringify({
@@ -20,7 +20,7 @@ const renderError = ({output, err}) => {
   return true
 };
 
-const renderApiError = ({output, err}) => {
+const renderApiError = ({ output, err }) => {
   const body = _.get(err, 'response.body');
 
   if (!body) {

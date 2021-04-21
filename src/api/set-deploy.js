@@ -1,6 +1,6 @@
 const superagent = require('superagent');
 
-module.exports = async ({host, organization, gameId, authorization, version}) => {
+module.exports = async ({ host, organization, gameId, authorization, version }) => {
   const data = {
     deployed_version: version,
     staged_version: 0,
