@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const updateNotifier = require('update-notifier');
 const walkSync = require('walk-sync');
 const { createLogger, format, transports } = require('winston');
 const { program } = require('@caporal/core');
@@ -37,3 +38,5 @@ const logger = createLogger({
 program.logger(logger);
 
 program.run(process.argv.slice(2));
+
+updateNotifier({ pkg: packageJson }).notify();
